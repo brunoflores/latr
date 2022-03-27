@@ -1,0 +1,24 @@
+opam-version: "2.0"
+name: "project"
+version: "0.1"
+synopsis: "The latr language"
+description: """
+The latr language.
+"""
+maintainer: "Bruno Flores <bruno@brunoflores.com.br>"
+authors: "Bruno Flores <bruno@brunoflores.com.br>"
+license: "Apache-2.0"
+homepage: "https://github.com/brunoflores/latr"
+bug-reports: "https://github.com/brunoflores/latr/issues"
+dev-repo: "git+https://github.com/brunoflores/latr.git"
+depends: [
+  "ocaml"
+  "ocamlfind"
+  "fstar"
+  "menhir"
+]
+build: [
+  ["./configure" "--prefix=%{prefix}%"]
+  [make]
+]
+install: [make "install"]
